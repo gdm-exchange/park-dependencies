@@ -88,6 +88,9 @@ case "`uname`" in
            ;;
 esac
 
+echo "java_home：$JAVA_HOME"
+
+
 if [ -z "$JAVA_HOME" ] ; then
   if [ -r /etc/gentoo-release ] ; then
     JAVA_HOME=`java-config --jre-home`
