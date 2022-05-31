@@ -1,0 +1,8 @@
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/model/Reference.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/model/KeyValue.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/model/Span.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/SpansToDependencyLinks.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/Utils.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/model/Process.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/model/Dependency.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-common/src/main/java/io/jaegertracing/spark/dependencies/DependenciesSparkHelper.java

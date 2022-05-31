@@ -1,0 +1,9 @@
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/JsonHelper.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/KeyValueDeserializer.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/SpanDeserializer.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/KeyValueMixin.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/ElasticTupleToSpan.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/ReferenceDeserializer.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/SpanMixin.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/ElasticsearchDependenciesJob.java
+/Users/mofei/code/mofei100/spark-dependencies/jaeger-spark-dependencies-elasticsearch/src/main/java/io/jaegertracing/spark/dependencies/elastic/json/ReferenceMixin.java

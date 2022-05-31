@@ -1,0 +1,16 @@
+io/jaegertracing/spark/dependencies/test/rest/RestResult.class
+io/jaegertracing/spark/dependencies/test/tree/TreeGenerator.class
+io/jaegertracing/spark/dependencies/test/tree/TracingWrapper$ZipkinWrapper.class
+io/jaegertracing/spark/dependencies/test/DependencyLinkDerivator.class
+io/jaegertracing/spark/dependencies/test/tree/Traversals.class
+io/jaegertracing/spark/dependencies/test/rest/JsonHelper.class
+io/jaegertracing/spark/dependencies/test/TracersGenerator.class
+io/jaegertracing/spark/dependencies/test/DependenciesTest.class
+io/jaegertracing/spark/dependencies/test/TracersGenerator$TracerHolder.class
+io/jaegertracing/spark/dependencies/test/TracersGenerator$Flushable.class
+io/jaegertracing/spark/dependencies/test/tree/Node.class
+io/jaegertracing/spark/dependencies/test/rest/DependencyLink.class
+io/jaegertracing/spark/dependencies/test/TracersGenerator$Tuple.class
+io/jaegertracing/spark/dependencies/test/DependenciesTest$1.class
+io/jaegertracing/spark/dependencies/test/tree/TracingWrapper.class
+io/jaegertracing/spark/dependencies/test/tree/TracingWrapper$JaegerWrapper.class

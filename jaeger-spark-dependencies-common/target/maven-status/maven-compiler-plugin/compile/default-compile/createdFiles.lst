@@ -1,0 +1,8 @@
+io/jaegertracing/spark/dependencies/model/Reference.class
+io/jaegertracing/spark/dependencies/model/Process.class
+io/jaegertracing/spark/dependencies/SpansToDependencyLinks.class
+io/jaegertracing/spark/dependencies/model/Span.class
+io/jaegertracing/spark/dependencies/DependenciesSparkHelper.class
+io/jaegertracing/spark/dependencies/model/KeyValue.class
+io/jaegertracing/spark/dependencies/model/Dependency.class
+io/jaegertracing/spark/dependencies/Utils.class

@@ -1,0 +1,5 @@
+io/jaegertracing/spark/dependencies/cassandra/CassandraDependenciesJob$CassandraDependenciesV2.class
+io/jaegertracing/spark/dependencies/cassandra/CassandraDependenciesJob.class
+io/jaegertracing/spark/dependencies/cassandra/CassandraDependenciesJob$Builder.class
+io/jaegertracing/spark/dependencies/cassandra/CassandraSpan.class
+io/jaegertracing/spark/dependencies/cassandra/CassandraDependenciesJob$CassandraDependencies.class

@@ -1,0 +1,11 @@
+io/jaegertracing/spark/dependencies/elastic/json/ReferenceMixin.class
+io/jaegertracing/spark/dependencies/elastic/json/JsonHelper.class
+io/jaegertracing/spark/dependencies/elastic/ElasticTupleToSpan.class
+io/jaegertracing/spark/dependencies/elastic/ElasticsearchDependenciesJob$Builder.class
+io/jaegertracing/spark/dependencies/elastic/json/SpanMixin.class
+io/jaegertracing/spark/dependencies/elastic/json/SpanDeserializer.class
+io/jaegertracing/spark/dependencies/elastic/json/KeyValueMixin.class
+io/jaegertracing/spark/dependencies/elastic/ElasticsearchDependenciesJob.class
+io/jaegertracing/spark/dependencies/elastic/ElasticsearchDependenciesJob$ElasticsearchDependencies.class
+io/jaegertracing/spark/dependencies/elastic/json/KeyValueDeserializer.class
+io/jaegertracing/spark/dependencies/elastic/json/ReferenceDeserializer.class
