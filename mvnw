@@ -89,7 +89,8 @@ case "`uname`" in
 esac
 
 echo "java_home：$JAVA_HOME"
-
+export JAVA_HOME=`/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64`
+echo "java_home：$JAVA_HOME"
 
 if [ -z "$JAVA_HOME" ] ; then
   if [ -r /etc/gentoo-release ] ; then
