@@ -10,6 +10,8 @@ fi
 
 echo "ECR_IMAGE_NAME is $ECR_IMAGE_NAME"
 
+mvn clean package -Dmaven.test.skip=true -Dmaven.clean.failOnError=false
+
 echo "building docker image..."
 docker build -t "$ECR_IMAGE_NAME" .
 
