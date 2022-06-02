@@ -42,7 +42,7 @@ public final class DependenciesSparkJob {
         }
         SparkTask sparkTask = new SparkTask();
         sparkTask.setStorage(storage);
-        scheduledExecutorService.scheduleAtFixedRate(sparkTask, 10, 10, TimeUnit.MINUTES);
+        scheduledExecutorService.scheduleAtFixedRate(sparkTask, 1, 10, TimeUnit.MINUTES);
     }
 
 
