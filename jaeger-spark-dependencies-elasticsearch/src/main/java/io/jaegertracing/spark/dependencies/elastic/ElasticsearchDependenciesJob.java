@@ -75,7 +75,7 @@ public class ElasticsearchDependenciesJob {
             sparkProperties.put("es.net.ssl.keystore.pass",
                     System.getProperty("javax.net.ssl.keyStorePassword", ""));
             sparkProperties.put("es.net.ssl.truststore.location",
-                    getSystemPropertyAsFileResource("javax.net.ssl.trustStore"));
+                    getKeyStore());
             sparkProperties.put("es.net.ssl.truststore.pass",
                     System.getProperty("javax.net.ssl.trustStorePassword", ""));
 
@@ -264,7 +264,7 @@ public class ElasticsearchDependenciesJob {
         JavaSparkContext sc = new JavaSparkContext(conf);
         try {
             for (int i = 0; i < spanIndices.length; i++) {
-                log.info("spanIndices length:{}",spanIndices.length);
+                log.info("spanIndices length:{}", spanIndices.length);
                 String spanIndex = spanIndices[i];
                 String depIndex = depIndices[i];
                 log.info("Running Dependencies job for {}, reading from {} index, result storing to {}", day, spanIndex, depIndex);
