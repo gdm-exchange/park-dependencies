@@ -182,7 +182,7 @@ public class ElasticsearchDependenciesJob {
     }
 
     private static String getKeyStore() {
-        String prop = "/usr/local/share/certs/elasticsearch-ca.pem";
+        String prop = "/usr/local/share/certs/elastic-certificates.p12";
         return prop != null && !prop.isEmpty() ? "file:" + prop : prop;
     }
 
