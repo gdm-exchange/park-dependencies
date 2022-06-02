@@ -89,13 +89,17 @@ public class ElasticsearchDependenciesJob {
         // By default the job only works on traces whose first timestamp is today
         ZonedDateTime day = ZonedDateTime.of(LocalDate.now().atStartOfDay(), ZoneOffset.UTC);
 
-        /** When set, this indicates which jars to distribute to the cluster. */
+        /**
+         * When set, this indicates which jars to distribute to the cluster.
+         */
         public Builder jars(String... jars) {
             this.jars = jars;
             return this;
         }
 
-        /** es.nodes separated by ',' */
+        /**
+         * es.nodes separated by ','
+         */
         public Builder nodes(String hosts) {
             Utils.checkNoTNull(hosts, "nodes");
             this.hosts = hosts;
@@ -103,40 +107,52 @@ public class ElasticsearchDependenciesJob {
             return this;
         }
 
-        /** username used for basic auth. Needed when Shield or X-Pack security is enabled */
+        /**
+         * username used for basic auth. Needed when Shield or X-Pack security is enabled
+         */
         public Builder username(String username) {
             this.username = username;
             return this;
         }
 
-        /** password used for basic auth. Needed when Shield or X-Pack security is enabled */
+        /**
+         * password used for basic auth. Needed when Shield or X-Pack security is enabled
+         */
         public Builder password(String password) {
             this.password = password;
             return this;
         }
 
-        /** index prefix for Jaeger indices. By default empty */
+        /**
+         * index prefix for Jaeger indices. By default empty
+         */
         public Builder indexPrefix(String indexPrefix) {
             this.indexPrefix = indexPrefix;
             return this;
         }
 
-        /** span range for Jaeger indices. By default 24h */
+        /**
+         * span range for Jaeger indices. By default 24h
+         */
         public Builder spanRange(String spanRange) {
             this.spanRange = spanRange;
             return this;
         }
 
-        /** Day to process dependencies for. Defaults to today. */
+        /**
+         * Day to process dependencies for. Defaults to today.
+         */
         public Builder day(LocalDate day) {
             this.day = day.atStartOfDay(ZoneOffset.UTC);
             return this;
         }
 
-        /** Whether the connector is used against an Elasticsearch instance in a cloud/restricted
-         *  environment over the WAN, such as Amazon Web Services. In this mode, the
-         *  connector disables discovery and only connects through the declared es.nodes during all operations,
-         *  including reads and writes. Note that in this mode, performance is highly affected. */
+        /**
+         * Whether the connector is used against an Elasticsearch instance in a cloud/restricted
+         * environment over the WAN, such as Amazon Web Services. In this mode, the
+         * connector disables discovery and only connects through the declared es.nodes during all operations,
+         * including reads and writes. Note that in this mode, performance is highly affected.
+         */
         public Builder nodesWanOnly(boolean wanOnly) {
             this.nodesWanOnly = wanOnly;
             return this;
@@ -248,6 +264,7 @@ public class ElasticsearchDependenciesJob {
         JavaSparkContext sc = new JavaSparkContext(conf);
         try {
             for (int i = 0; i < spanIndices.length; i++) {
+                log.info("spanIndices length:{}",spanIndices.length);
                 String spanIndex = spanIndices[i];
                 String depIndex = depIndices[i];
                 log.info("Running Dependencies job for {}, reading from {} index, result storing to {}", day, spanIndex, depIndex);
@@ -272,6 +289,9 @@ public class ElasticsearchDependenciesJob {
                     break;
                 }
             }
+        } catch (Throwable e) {
+            e.printStackTrace();
+            log.error("cause:{},msg:{}", e.getCause(), e.getMessage());
         } finally {
             sc.stop();
         }
