@@ -78,6 +78,7 @@ public class ElasticsearchDependenciesJob {
                     getKeyStore());
             sparkProperties.put("es.net.ssl.truststore.pass",
                     System.getProperty("javax.net.ssl.trustStorePassword", ""));
+            sparkProperties.put("javax.net.ssl.trustStore", "/usr/local/share/certs/");
 
         }
 
