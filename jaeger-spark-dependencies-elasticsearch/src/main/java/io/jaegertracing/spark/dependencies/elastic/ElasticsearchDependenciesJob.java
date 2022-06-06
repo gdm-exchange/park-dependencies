@@ -70,12 +70,12 @@ public class ElasticsearchDependenciesJob {
             sparkProperties.put("spark.ui.enabled", "false");
             // don't die if there are no spans
             sparkProperties.put("es.index.read.missing.as.empty", "true");
-            sparkProperties.put("es.net.ssl.keystore.location", "file:////usr/local/share/certs/elastic-certificates.p12");
-            sparkProperties.put("es.net.ssl.keystore.pass", "");
-            sparkProperties.put("es.net.ssl.keystore.type", "PKCS12");
-            sparkProperties.put("es.net.ssl.truststore.location", "file:////usr/local/share/certs/elastic-certificates.p12");
-            sparkProperties.put("es.net.ssl.truststore.pass", "");
-            sparkProperties.put("es.net.ssl","true");
+            sparkProperties.put("es.net.ssl.keystore.location", "file:////usr/local/share/certs/mofei.jks");
+            sparkProperties.put("es.net.ssl.keystore.pass", "123456");
+            sparkProperties.put("es.net.ssl.keystore.type", "JKS");
+            sparkProperties.put("es.net.ssl.truststore.location", "file:////usr/local/share/certs/mofei.jks");
+            sparkProperties.put("es.net.ssl.truststore.pass", "123456");
+            sparkProperties.put("es.net.ssl", "true");
             sparkProperties.put("es.net.ssl.cert.allow.self.signed", "true");
 
 //            df = spark.read.format("org.elasticsearch.spark.sql").option("es.nodes", "elasticsearch-svc.namespace") \
