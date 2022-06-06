@@ -3,10 +3,11 @@ version: "3"
 services:
   spark-dependency:
     environment:
-      STORAGE: elasticsearch
-      ES_NODES: http://192.168.0.12:9200
-      ES_USERNAME: test
-      ES_PASSWORD: test
+      - STORAGE=elasticsearch
+      - ES_NODES=http://192.168.0.12:9200
+      - ES_USERNAME=test
+      - ES_PASSWORD=test
+      - ES_NODES_WAN_ONLY=true
     image: spark-dependency
     restart: on-failure
     deploy:

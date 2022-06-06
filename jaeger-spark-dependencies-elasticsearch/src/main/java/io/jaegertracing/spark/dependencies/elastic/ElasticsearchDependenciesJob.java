@@ -78,7 +78,9 @@ public class ElasticsearchDependenciesJob {
                     getKeyStore());
             sparkProperties.put("es.net.ssl.truststore.pass",
                     System.getProperty("javax.net.ssl.trustStorePassword", ""));
-            sparkProperties.put("javax.net.ssl.trustStore", "/usr/local/share/certs/");
+            sparkProperties.put("javax.net.ssl.trustStore", "/elk-docker/elk/elasticsearch1/config/certs/");
+            sparkProperties.put("es.net.ssl.cert.allow.self.signed", "true");
+
 
         }
 
@@ -183,7 +185,7 @@ public class ElasticsearchDependenciesJob {
     }
 
     private static String getKeyStore() {
-        String prop = "/usr/local/share/certs/elastic-certificates.p12";
+        String prop = "/elk-docker/elk/elasticsearch1/config/certs/elastic-certificates.p12";
         return prop != null && !prop.isEmpty() ? "file:" + prop : prop;
     }
 
