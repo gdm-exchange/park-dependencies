@@ -9,6 +9,8 @@ services:
       - ES_PASSWORD=123456
       - ES_NODES_WAN_ONLY=true
     image: spark-dependency
+    volumes:
+      - /elk-docker/elk/elasticsearch1/config/certs:/usr/local/share/certs/
     restart: on-failure
     deploy:
       resources:

@@ -185,7 +185,7 @@ public class ElasticsearchDependenciesJob {
     }
 
     private static String getKeyStore() {
-        String prop = "/elk-docker/elk/elasticsearch1/config/certs/elastic-certificates.p12";
+        String prop = "/usr/local/share/certs/elastic-certificates.p12";
         return prop != null && !prop.isEmpty() ? "file:" + prop : prop;
     }
 
