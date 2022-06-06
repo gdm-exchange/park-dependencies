@@ -1,4 +1,4 @@
-FROM eclipse-temurin:11-jre
+FROM openjdk:11
 MAINTAINER Pavol Loffay <ploffay@redhat.com>
 ENV APP_HOME /app/
 COPY jaeger-spark-dependencies/target/jaeger-spark-dependencies-0.0.2-SNAPSHOT.jar $APP_HOME/
