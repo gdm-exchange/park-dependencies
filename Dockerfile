@@ -11,4 +11,4 @@ COPY entrypoint.sh /
 #USER 185
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD java -Djavax.net.ssl.trustStore=/usr/local/share/certs/ ${JAVA_OPTS} -jar $APP_HOME/jaeger-spark-dependencies-0.0.2-SNAPSHOT.jar
+CMD java -Djavax.net.ssl ${JAVA_OPTS} -jar $APP_HOME/jaeger-spark-dependencies-0.0.2-SNAPSHOT.jar
