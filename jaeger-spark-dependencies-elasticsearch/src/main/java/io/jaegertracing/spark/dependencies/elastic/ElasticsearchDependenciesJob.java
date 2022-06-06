@@ -211,9 +211,10 @@ public class ElasticsearchDependenciesJob {
         if (builder.hosts.indexOf("https") != -1) {
             conf.set("es.net.ssl", "true");
         }
-        if (builder.nodesWanOnly) {
-            conf.set("es.nodes.wan.only", "true");
-        }
+//        if (builder.nodesWanOnly) {
+//            conf.set("es.nodes.wan.only", "true");
+//        }
+        conf.set("es.nodes.wan.only", "true");
         if (builder.clientNodeOnly) {
             conf.set("es.nodes.discovery", "0");
             conf.set("es.nodes.client.only", "1");
