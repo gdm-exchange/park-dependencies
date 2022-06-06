@@ -70,17 +70,29 @@ public class ElasticsearchDependenciesJob {
             sparkProperties.put("spark.ui.enabled", "false");
             // don't die if there are no spans
             sparkProperties.put("es.index.read.missing.as.empty", "true");
-            sparkProperties.put("es.net.ssl.keystore.location",
-                    getKeyStore());
-            sparkProperties.put("es.net.ssl.keystore.pass",
-                    System.getProperty("javax.net.ssl.keyStorePassword", ""));
-            sparkProperties.put("es.net.ssl.truststore.location",
-                    getKeyStore());
-            sparkProperties.put("es.net.ssl.truststore.pass",
-                    System.getProperty("javax.net.ssl.trustStorePassword", ""));
-            sparkProperties.put("javax.net.ssl.trustStore", "/elk-docker/elk/elasticsearch1/config/certs/");
+            sparkProperties.put("es.net.ssl.keystore.location", "file:////usr/local/share/certs/elastic-certificates.p12");
+            sparkProperties.put("es.net.ssl.keystore.pass", "");
+            sparkProperties.put("es.net.ssl.keystore.type", "PKCS12");
+            sparkProperties.put("es.net.ssl.truststore.location", "file:////usr/local/share/certs/elastic-certificates.p12");
+            sparkProperties.put("es.net.ssl.truststore.pass", "");
             sparkProperties.put("es.net.ssl.cert.allow.self.signed", "true");
+            sparkProperties.put("es.net.ssl","true");
 
+//            spark.read.format("org.elasticsearch.spark.sql").option("es.nodes", "elasticsearch-svc.namespace") \
+//                                                         .option("es.port","9200") \
+//                                                         .option("es.read.metadata", "false") \
+//                                                         .option("es.mapping.date.rich", "false") \
+//                                                         .option("es.query", query) \
+//                                                         .option("es.net.http.auth.user", "elastic-username") \
+//                                                         .option("es.net.http.auth.pass", "elastic-password") \
+//                                                         .option("es.net.ssl.keystore.location","file:////my-storage/ssl_certificates/elastic-certificates.p12") \
+//                                                         .option("es.net.ssl.keystore.pass","mypassword") \
+//                                                         .option("es.net.ssl.keystore.type","PKCS12") \
+//                                                         .option("es.net.ssl.truststore.location","file:////my-storage/ssl_certificates/elastic-certificates.p12") \
+//                                                         .option("es.net.ssl.truststore.pass","mypassword") \
+//                                                         .option("es.net.ssl","true") \
+//                                                         .option("es.net.ssl.cert.allow.self.signed","true") \
+//                                                         .load("my_index")
 
         }
 
