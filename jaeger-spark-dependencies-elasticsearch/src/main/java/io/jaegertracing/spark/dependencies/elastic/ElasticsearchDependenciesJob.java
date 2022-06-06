@@ -63,6 +63,8 @@ public class ElasticsearchDependenciesJob {
         String indexPrefix = Utils.getEnv("ES_INDEX_PREFIX", null);
         String spanRange = Utils.getEnv("ES_TIME_RANGE", "24h");
         Boolean useAliases = Boolean.parseBoolean(Utils.getEnv("ES_USE_ALIASES", "false"));
+        String keystore = Utils.getEnv("KEYSTORE", "usr/local/share/certs/mofei.jks");
+        String keyPassword = Utils.getEnv("KEY_PASSWORD", "123456");
 
         final Map<String, String> sparkProperties = new LinkedHashMap<>();
 
@@ -70,30 +72,13 @@ public class ElasticsearchDependenciesJob {
             sparkProperties.put("spark.ui.enabled", "false");
             // don't die if there are no spans
             sparkProperties.put("es.index.read.missing.as.empty", "true");
-            sparkProperties.put("es.net.ssl.keystore.location", "file:////usr/local/share/certs/mofei.jks");
-            sparkProperties.put("es.net.ssl.keystore.pass", "123456");
+            sparkProperties.put("es.net.ssl.keystore.location", "file:///" + keystore);
+            sparkProperties.put("es.net.ssl.keystore.pass", keyPassword);
             sparkProperties.put("es.net.ssl.keystore.type", "JKS");
-            sparkProperties.put("es.net.ssl.truststore.location", "file:////usr/local/share/certs/mofei.jks");
-            sparkProperties.put("es.net.ssl.truststore.pass", "123456");
+            sparkProperties.put("es.net.ssl.truststore.location", "file:///" + keystore);
+            sparkProperties.put("es.net.ssl.truststore.pass", keyPassword);
             sparkProperties.put("es.net.ssl", "true");
             sparkProperties.put("es.net.ssl.cert.allow.self.signed", "true");
-
-//            df = spark.read.format("org.elasticsearch.spark.sql").option("es.nodes", "elasticsearch-svc.namespace") \
-//                                                         .option("es.port","9200") \
-//                                                         .option("es.read.metadata", "false") \
-//                                                         .option("es.mapping.date.rich", "false") \
-//                                                         .option("es.query", query) \
-//                                                         .option("es.net.http.auth.user", "elastic-username") \
-//                                                         .option("es.net.http.auth.pass", "elastic-password") \
-//                                                         .option("es.net.ssl.keystore.location","file:////my-storage/ssl_certificates/elastic-certificates.jks") \
-//                                                         .option("es.net.ssl.keystore.pass","mypassword") \
-//                                                         .option("es.net.ssl.keystore.type","JKS") \
-//                                                         .option("es.net.ssl.truststore.location","file:////my-storage/ssl_certificates/elastic-certificates.jks") \
-//                                                         .option("es.net.ssl.truststore.pass","mypassword") \
-//                                                         .option("es.net.ssl","true") \
-//                                                         .option("es.net.ssl.cert.allow.self.signed","true") \
-//                                                         .load("my_index")
-
         }
 
         // local[*] master lets us run & test the job locally without setting a Spark cluster

@@ -8,6 +8,8 @@ services:
       - ES_USERNAME=elastic
       - ES_PASSWORD=123456
       - ES_NODES_WAN_ONLY=true
+      - KEYSTORE=/usr/local/share/certs/mofei.jks
+      - KEY_PASSWORD=123456
     image: spark-dependency
     volumes:
       - /elk-docker/elk/elasticsearch1/config/certs:/usr/local/share/certs/
